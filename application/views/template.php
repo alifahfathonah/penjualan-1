@@ -1,9 +1,13 @@
 
+<?php 
+if($this->session->userdata("id_pegawai")){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Bayar Aja</title>
+	<title>Penjualan Obat</title>
+	<link rel="shortcut icon" href="<?=base_url()?>assets/img/icon.jpeg">
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="<?=base_url()?>assets/img/icon.ico" type="image/x-icon"/>
 
@@ -130,29 +134,25 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="<?=base_url()?>assets/img/profile.jpg" alt="<?=base_url()?>." class="avatar-img rounded-circle">
+									<img src="<?=base_url()?>assets/img/icon.jpeg" alt="<?=base_url()?>." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="dropdown-user-scroll scrollbar-outer">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="<?=base_url()?>assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="<?=base_url()?>assets/img/icon.jpeg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Risdianto</h4>
-												<p class="text-muted">hello@bayaraja.id</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+												<h4>Username</h4>
+												<p class="text-muted"><?php echo $this->session->userdata("nama_pegawai"); ?></p>
 											</div>
 										</div>
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">My Profile</a>
-										<a class="dropdown-item" href="#">My Balance</a>
-										<a class="dropdown-item" href="#">Inbox</a>
+										<a class="dropdown-item" href="#">Edit Profile</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Account Setting</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="<?=site_url('auth/logout')?>">Logout</a>
 									</li>
 								</div>
 							</ul>
@@ -396,3 +396,8 @@
 	<!-- DELETE -->
 </body>
 </html>
+<?php 
+}else{ 
+	redirect('/auth/login');
+} 
+?>
