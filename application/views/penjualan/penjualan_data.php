@@ -44,8 +44,8 @@
 							<th>No</th>
 							<th>ID Penjualan</th>
 							<th>Tanggal Penjualan</th>
-							<th>Grand Total</th>
 							<th>Customer</th>
+							<th>Grand Total</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
@@ -56,8 +56,8 @@
               <td><?php echo $no++; ?></td>
               <td><?php echo $u->id_penjualan ?></td>
               <td><?php echo $u->tanggal_penjualan ?></td>
-              <td><?php echo number_format($u->grand_total) ?></td>
               <td><?php echo $u->nama_customer ?></td>
+              <td><?php echo number_format($u->grand_total) ?></td>
 							<td>
 							<div class="form-button-action">
 								<?php if($u->status == 'Proses'){ ?>
@@ -73,7 +73,7 @@
 									</label>
 								<?php }else{ ?>
 									<label class="selectgroup-item">
-										<a href="<?php echo base_url('pembelian/print/'.$u->id_penjualan)?>">
+										<a href="<?php echo base_url('penjualan/print/'.$u->id_penjualan)?>" target="_blank">
 											<span class="selectgroup-button selectgroup-button-icon "><i class="fas fa-print btn btn-info btn-xs"></i></span>
 										</a>
 									</label>

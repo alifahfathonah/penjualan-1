@@ -63,4 +63,11 @@ class Pembelian extends CI_Controller
 		$this->pembelian_m->delete($id);
 		redirect('/pembelian');
 	}
+
+	public function print($id)
+	{
+		$data['header'] = $this->pembelian_m->pembelian($id)->result();
+		$data['data'] = $this->pembelian_m->list_item($id)->result();
+		$this->load->view('pembelian/print',$data);
+	}
 }

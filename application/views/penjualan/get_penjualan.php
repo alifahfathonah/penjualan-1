@@ -1,8 +1,8 @@
 <form action="<?php echo site_url('/penjualan/item/'.$data[0]->id_penjualan) ?>" method="POST">
 	<div class="modal-body">
-    <input type="text" name="id_penjualan" value="<?php echo $data[0]->id_penjualan;?>">
-		<input type="text" name="id_detail_penjualan" value="<?php echo $data[0]->id_detail_penjualan;?>">
-		<input type="text" name="harga" value="<?php echo $data[0]->harga;?>">
+    <input type="hidden" name="id_penjualan" value="<?php echo $data[0]->id_penjualan;?>">
+		<input type="hidden" name="id_detail_penjualan" value="<?php echo $data[0]->id_detail_penjualan;?>">
+		<input type="hidden" name="harga" value="<?php echo $data[0]->harga;?>">
 		<div class="row">
       <div class="col-sm-12">
           <div class="form-group form-floating-label">

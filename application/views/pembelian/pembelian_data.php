@@ -103,8 +103,8 @@
 							<th>No</th>
 							<th>ID Pembelian</th>
 							<th>Tanggal Pembelian</th>
-							<th>Grand Total</th>
 							<th>Supplier</th>
+							<th>Grand Total</th>
 							<th>Status</th>
 							<th>Aksi</th>
 						</tr>
@@ -116,8 +116,8 @@
               <td><?php echo $no++; ?></td>
               <td><?php echo $u->id_pembelian ?></td>
               <td><?php echo $u->tanggal_pembelian ?></td>
-              <td><?php echo number_format($u->grand_total) ?></td>
               <td><?php echo $u->nama_supplier ?></td>
+              <td><?php echo number_format($u->grand_total) ?></td>
               <td><button class="btn btn-<?php if($u->status == 'Done'){ echo 'success';}else{ echo 'warning';}?>" disabled="disabled"><?php echo $u->status ?></button></td>
 							<td>
 							<div class="form-button-action">
@@ -134,7 +134,7 @@
 									</label>
 								<?php }else{ ?>
 									<label class="selectgroup-item">
-										<a href="<?php echo base_url('pembelian/print/'.$u->id_pembelian)?>">
+										<a href="<?php echo base_url('pembelian/print/'.$u->id_pembelian)?>" target="_blank">
 											<span class="selectgroup-button selectgroup-button-icon "><i class="fas fa-print btn btn-info btn-xs"></i></span>
 										</a>
 									</label>

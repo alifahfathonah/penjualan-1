@@ -141,7 +141,7 @@
 					<div class="card-tools">
 						<button onclick="myFunction()" class="btn btn-secondary btn-round btn-sm mr-2"><i class="fa fa-plus"></i> Resep Dokter</button>
 						<button class="btn btn-info btn-round btn-sm mr-2" data-toggle="modal" data-target="#addRowModal">
-						<i class="fa fa-plus"></i> Item Pembelian
+						<i class="fa fa-plus"></i> Item Penjualan
 						</button>
 					</div>
 				</div>
@@ -155,14 +155,14 @@
 							<div class="modal-header no-bd">
 								<h5 class="modal-title">
 									<span class="fw-mediumbold">
-									Input Pembelian</span> 
+									Item Penjualan</span> 
 								</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<form action="<?php echo site_url('/penjualan/item/'.$header[0]->id_penjualan) ?>" method="POST">
-							<input type="text" name="id_penjualan" value="<?php echo $header[0]->id_penjualan;?>">
+								<input type="hidden" name="id_penjualan" value="<?php echo $header[0]->id_penjualan;?>">
 								<div class="modal-body">
 									<div class="row">
 										<div class="col-sm-12">
@@ -173,6 +173,7 @@
 															$this->db->select('*');
 															$this->db->from('obat');                            
 															$this->db->join('supplier', 'supplier.id_supplier = obat.id_supplier');
+															$this->db->where('stok >', '0');
 															$query = $this->db->get();            
 															foreach ($query->result() as $row)
 															{
@@ -264,7 +265,7 @@
 				<div class="modal-header no-bd">
 					<h5 class="modal-title">
 						<span class="fw-mediumbold">
-						Pembelian</span> 
+						Item Penjualan</span> 
 					</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>

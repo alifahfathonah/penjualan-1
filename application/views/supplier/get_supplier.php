@@ -1,6 +1,6 @@
 <form action="<?php echo site_url('/supplier/') ?>" method="POST">
 	<div class="modal-body">
-		<input type="text" name="id_supplier" value="<?php echo $data[0]->id_supplier;?>">
+		<input type="hidden" name="id_supplier" value="<?php echo $data[0]->id_supplier;?>">
 		<div class="row">
 			<div class="col-sm-12">
 					<div class="form-group form-floating-label">

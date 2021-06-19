@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class pembelian_m extends CI_Model
 {
-
 	public function list(){
 		// NOTE : menampilkan data list keseluruhan pembelian dan di join dengan supplier
 		$this->db->select('*')
@@ -195,6 +194,18 @@ class pembelian_m extends CI_Model
               ->from('pembelian')
 							->where('tanggal_pembelian',date('Y-m-d'));
 		return $this->db->get()->result();
+	}
+	public function list_lap(){
+		// NOTE : menampilkan data laporan
+		$this->db->select(" pembelian.id_pembelian,tanggal_pembelian,grand_total,nama_supplier,
+												GROUP_CONCAT(CONCAT_WS(' = ', nama_obat, qty) SEPARATOR '; ') as item ")
+              ->from('pembelian')
+              ->join('supplier', 'supplier.id_supplier=pembelian.id_supplier')
+              ->join('transaksi_pembelian', 'transaksi_pembelian.id_pembelian=pembelian.id_pembelian')
+              ->join('obat', 'obat.id_obat=transaksi_pembelian.id_obat')
+							->where('status', 'Done')
+							->group_by('transaksi_pembelian.id_pembelian');
+		return $this->db->get();
 	}
 }
 ?>

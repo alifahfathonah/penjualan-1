@@ -68,4 +68,11 @@ class penjualan extends CI_Controller
 		$this->penjualan_m->delete($id);
 		redirect('/penjualan');
 	}
+
+	public function print($id)
+	{
+		$data['header'] = $this->penjualan_m->penjualan($id)->result();
+		$data['data'] = $this->penjualan_m->list_item($id)->result();
+		$this->load->view('penjualan/print',$data);
+	}
 }

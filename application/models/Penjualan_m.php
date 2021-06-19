@@ -253,14 +253,22 @@ class Penjualan_m extends CI_Model
 		$this->db->where('id_penjualan', $id);
 		$this->db->delete('transaksi_penjualan');
 	}
-
-
-
-
-
 	public function penjualan_dash(){
 		$q = $this->db->get('penjualan'); 
 		return $q->num_rows();
+	}
+	public function list_lap(){
+		// NOTE : menampilkan data laporan
+		
+		$this->db->select(" transaksi_penjualan.id_penjualan, tanggal_penjualan, nama_customer, 
+												grand_total, GROUP_CONCAT(CONCAT_WS('=', nama_obat, qty)SEPARATOR '; ') as item ")
+              ->from('penjualan')
+              ->join('customer', 'customer.id_customer=penjualan.id_customer','left')
+              ->join('transaksi_penjualan', 'transaksi_penjualan.id_penjualan=penjualan.id_penjualan')
+              ->join('obat', 'obat.id_obat=transaksi_penjualan.id_obat')
+							->where('status', 'Done')
+							->group_by('transaksi_penjualan.id_penjualan');
+		return $this->db->get();
 	}
 }
 ?>

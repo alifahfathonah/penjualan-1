@@ -96,14 +96,14 @@
 						<div class="modal-header no-bd">
 							<h5 class="modal-title">
 								<span class="fw-mediumbold">
-								Input Pembelian</span> 
+								Item Pembelian</span> 
 							</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
             <form action="<?php echo site_url('/pembelian/item/'.$header[0]->id_pembelian) ?>" method="POST">
-            <input type="text" name="id_pembelian" value="<?php echo $header[0]->id_pembelian;?>">
+            	<input type="hidden" name="id_pembelian" value="<?php echo $header[0]->id_pembelian;?>">
 						  <div class="modal-body">
 								<div class="row">
 									<div class="col-sm-12">
@@ -206,7 +206,7 @@
 			<div class="modal-header no-bd">
 				<h5 class="modal-title">
 					<span class="fw-mediumbold">
-					Pembelian</span> 
+					Item Pembelian</span> 
 				</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>

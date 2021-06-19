@@ -1,6 +1,6 @@
 <form action="<?php echo site_url('/obat/') ?>" method="POST">
 	<div class="modal-body">
-		<input type="text" name="id_obat" value="<?php echo $data[0]->id_obat;?>">
+		<input type="hidden" name="id_obat" value="<?php echo $data[0]->id_obat;?>">
 		<div class="row">
     <div class="col-sm-12">
       <div class="form-group form-floating-label">

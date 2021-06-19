@@ -11,20 +11,8 @@
             <span>
                Username
               <span class="user-level"><?php echo $this->session->userdata("nama_pegawai"); ?></span>
-              <span class="caret"></span>
             </span>
           </a>
-          <div class="clearfix"></div>
-
-          <div class="collapse in" id="collapseExample">
-            <ul class="nav">
-              <li>
-                <a href="#edit">
-                  <span class="link-collapse">Edit Profile</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
       <ul class="nav nav-primary">
@@ -123,34 +111,18 @@
             </ul>
           </div>
         </li>
-        <li class="nav-item">
-          <a data-toggle="collapse" href="#charts">
-            <i class="far fa-chart-bar"></i>
+        <li class="nav-item 
+          <?php 
+            if( $this->uri->segment('1') == 'laporan' )
+            {
+              echo 'active';
+            }
+          ?>">
+          <a  href="<?=site_url('laporan')?>" class="collapsed" aria-expanded="false">
+            <i class="fas fa-chart-bar"></i>
             <p>Laporan</p>
-            <span class="caret"></span>
           </a>
-          <div class="collapse" id="charts">
-            <ul class="nav nav-collapse">
-              <li>
-                <a href="#">
-                  <span class="sub-item">Laporan 1</span>
-                </a>
-              </li>
-              <li>
-                <a href="charts/sparkline.html">
-                  <span class="sub-item">Laporan 2</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </li>
-        <!-- <li class="nav-item">
-          <a href="#">
-            <i class="fas fa-user-alt"></i>
-            <p>User Admin</p>
-            <span class="badge badge-success">4</span>
-          </a>
-        </li> -->
       </ul>
     </div>
   </div>
