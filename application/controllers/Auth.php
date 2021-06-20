@@ -15,7 +15,7 @@ class Auth extends CI_Controller
 		if($this->input->post('submit') == "submit"){
 			$hsl=$this->auth_m->login();
 			if($hsl > 0){
-				redirect('/pegawai');
+				redirect('/dashboard');
 			}else{
 				$vel['data']=$hsl;
 			}

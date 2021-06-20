@@ -107,7 +107,7 @@
 					<div class="col-7 col-stats">
 						<div class="numbers">
 							<p class="card-category">Transaksi Keluar</p>
-							<h4 class="card-title"><?php #echo $pembelian[0]->jml.' ( Rp. '.number_format($pembelian[0]->grand_total).' )';?></h4>
+							<h4 class="card-title"><?php echo $penjualan[0]->jml.' ( Rp. '.number_format($penjualan[0]->grand_total).' )';?></h4>
 						</div>
 					</div>
 				</div>

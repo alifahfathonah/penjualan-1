@@ -254,8 +254,10 @@ class Penjualan_m extends CI_Model
 		$this->db->delete('transaksi_penjualan');
 	}
 	public function penjualan_dash(){
-		$q = $this->db->get('penjualan'); 
-		return $q->num_rows();
+		$this->db->select('count(tanggal_penjualan) as jml, sum(grand_total) as grand_total')
+              ->from('penjualan')
+							->where('tanggal_penjualan',date('Y-m-d'));
+		return $this->db->get()->result();
 	}
 	public function list_lap(){
 		// NOTE : menampilkan data laporan
