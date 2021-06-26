@@ -1,73 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="author" content="www.frebsite.nl" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Login Penjualan</title>
-				<link rel="shortcut icon" href="<?=base_url()?>assets/img/icon.jpeg">
-        <!-- Custom CSS -->
-        <link href="<?=base_url()?>assets/css/styles.css" rel="stylesheet">
-				<!-- Custom Color Option -->
-				<link href="<?=base_url()?>assets/css/colors.css" rel="stylesheet">
-    </head>
-    <body style="height:100%">
-			<div id="" style="background-image: url('<?=base_url()?>assets/img/background.jpg');height: 635px;">
-				<!-- ========================== SignUp Elements ============================= -->
-					<div class="container" style="padding-top:10%">
-						<div class="row">
-							<div class="col-md-3">
-							</div>
-							<div class="col-md-6">
-								<form action="<?php echo site_url('/auth/login') ?>" method="POST">
-								<div class="card">
-									<div class="card-header">
-										<?php if($data == '0'){?>
-											<button class="col-md-12 btn btn-danger" disabled="disabled">Login Gagal</button>
-										<?php } ?>
-										<div class="card-title">Sign In
-									</div>
-									<div class="card-body pb-0">
-										<div class="d-flex">
-											<div class="col-md-12">
-												<div class="form-group">
-													<label>Username</label>
-													<input autocomplete="off" type="text" name="username" class="form-control" placeholder="Username" required>
-												</div>
-											</div>
-										</div>
-										<div class="d-flex">
-											<div class="col-md-12">
-												<div class="form-group">
-													<label>Password</label>
-													<input autocomplete="off" type="password" name="password" class="form-control" placeholder="Password" required>
-												</div>
-											</div>
-										</div>
-										<div class="separator-dashed"></div>
-										<div class="d-flex">
-											<div class="col-md-12">
-												<div class="form-group">
-													<button type="submit" name="submit" value="submit" class="btn btn-primary">Simpan</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								</form>
-							</div>
-							<div class="col-md-3">
-							</div>
-						</div>
+<head>
+	<title>Login Penjualan</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?=site_url()?>assets/img/icon.jpeg"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?=site_url()?>login/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('<?=site_url()?>assets/img/background.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+				
+				<!-- <form action="<?php echo site_url('/auth/login') ?>" method="POST"> -->
+				<form action="<?=site_url('/auth/login')?>" method="POST" class="login100-form validate-form p-b-33 p-t-5">
+				<?php if($data == '0'){?>
+					
+					<div class="wrap-input100 validate-input btn btn-danger">Login Gagal
 					</div>
-				<!-- ========================== Login Elements ============================= -->
+				<?php } ?>
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" autocomplete="off" type="text" name="username" placeholder="User name">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" autocomplete="off" type="password" name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" type="submit" name="submit" value="submit" >
+							Login
+						</button>
+					</div>
+
+				</form>
 			</div>
-			<!-- CSS Files -->
-			<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-			<link rel="stylesheet" href="<?=base_url()?>assets/css/atlantis.min.css">
-			<script src="<?=base_url()?>assets/js/core/bootstrap.min.js"></script>
-			<!-- Datatables -->
-			<script src="<?=base_url()?>assets/js/plugin/datatables/datatables.min.js"></script>
-	</body>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/vendor/bootstrap/js/popper.js"></script>
+	<script src="<?=site_url()?>login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?=site_url()?>login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=site_url()?>login/js/main.js"></script>
+
+</body>
 </html>
