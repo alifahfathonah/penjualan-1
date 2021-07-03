@@ -8,7 +8,8 @@ class Penjualan_m extends CI_Model
 		// NOTE : menampilkan data list keseluruhan penjualan dan di join dengan customer
 		$this->db->select('*')
               ->from('penjualan')
-              ->join('customer', 'customer.id_customer=penjualan.id_customer','left');
+              ->join('customer', 'customer.id_customer=penjualan.id_customer','left')
+							->order_by('tanggal_penjualan','desc');
 		return $this->db->get();
 	}
 	public function insert(){
@@ -27,6 +28,8 @@ class Penjualan_m extends CI_Model
 		$id_penjualan = $tgl. sprintf("%04s",$q3);
 
 		$this->db->set('id_penjualan', $id_penjualan);
+		$this->db->set('tanggal_penjualan', date('Y-m-d'));
+		$this->db->set('jam_penjualan', date('H:i:s'));
 		$this->db->set('status', 'Proses');
 		$this->db->insert('penjualan');
 	}

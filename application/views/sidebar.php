@@ -39,6 +39,8 @@
             if( $this->uri->segment('1') == 'customer' OR 
               $this->uri->segment('1') == 'pegawai' OR 
               $this->uri->segment('1') == 'supplier' OR 
+              $this->uri->segment('1') == 'kategori' OR 
+              $this->uri->segment('1') == 'dokter' OR 
               $this->uri->segment('1') == 'obat' )
             {
               echo 'active';
@@ -54,6 +56,8 @@
               if( $this->uri->segment('1') == 'customer' OR 
                 $this->uri->segment('1') == 'pegawai' OR 
                 $this->uri->segment('1') == 'supplier' OR 
+                $this->uri->segment('1') == 'kategori' OR 
+                $this->uri->segment('1') == 'dokter' OR 
                 $this->uri->segment('1') == 'obat' )
               {
                 echo 'show';
@@ -73,6 +77,16 @@
               <li class="<?php if($this->uri->segment('1') == 'obat'){ echo 'active'; } ?>">
                 <a href="<?=site_url('obat')?>">
                   <span class="sub-item">Obat</span>
+                </a>
+              </li>
+              <li class="<?php if($this->uri->segment('1') == 'kategori'){ echo 'active'; } ?>">
+                <a href="<?=site_url('kategori')?>">
+                  <span class="sub-item">Kategori</span>
+                </a>
+              </li>
+              <li class="<?php if($this->uri->segment('1') == 'dokter'){ echo 'active'; } ?>">
+                <a href="<?=site_url('dokter')?>">
+                  <span class="sub-item">Dokter</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'customer'){ echo 'active'; } ?>">

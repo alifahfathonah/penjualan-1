@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h4 class="page-title">Data Obat</h4>
+	<h4 class="page-title">Data Dokter</h4>
 	<ul class="breadcrumbs">
 		<li class="nav-home">
 			<a href="#">
@@ -16,7 +16,7 @@
 			<i class="flaticon-right-arrow"></i>
 		</li>
 		<li class="nav-item">
-			<a href="#">Obat</a>
+			<a href="#">Dokter</a>
 		</li>
 	</ul>
 </div>
@@ -33,7 +33,7 @@
 							Export
 						</a> -->
 						<button class="btn btn-info btn-round btn-sm mr-2" data-toggle="modal" data-target="#addRowModal">
-						<i class="fa fa-plus"></i> Obat
+						<i class="fa fa-plus"></i> Dokter
 						</button>
 					</div>
 				</div>
@@ -47,94 +47,44 @@
 							<div class="modal-header no-bd">
 								<h5 class="modal-title">
 									<span class="fw-mediumbold">
-									Input Obat</span> 
+									Input Dokter</span> 
 								</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<div class="modal-body">
-								<form action="<?php echo site_url('/obat') ?>" method="POST">
+								<form action="<?php echo site_url('/dokter') ?>" method="POST">
 									<div class="modal-body">
 										<div class="row">
 											<div class="col-sm-12">
 													<div class="form-group form-floating-label">
-														<input name="nama_obat" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
-														<label for="inputFloatingLabel2" class="placeholder">Obat</label>
+														<input name="nama_dokter" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
+														<label for="inputFloatingLabel2" class="placeholder">Dokter</label>
 													</div>
 											</div>
 											<div class="col-sm-12">
 													<div class="form-group form-floating-label">
-														<input name="jenis_obat" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
-														<label for="inputFloatingLabel2" class="placeholder">Jenis Obat</label>
+														<input name="spesialis" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
+														<label for="inputFloatingLabel2" class="placeholder">Spesialis</label>
 													</div>
 											</div>
 											<div class="col-sm-12">
 													<div class="form-group form-floating-label">
-														<select name="satuan" class="form-control input-solid" id="selectFloatingLabel2" required>
-															<option value="">&nbsp;</option>
-															<option value="Box">Box</option>
-															<option value="Pcs">Pcs</option>
-															<option value="Pack">Pack</option>
-															<option value="Carton">Carton</option>
-														</select>
-														<label for="selectFloatingLabel2" class="placeholder">Satuan</label>
+                            <textarea name="alamat" autocomplete="off" class="form-control input-solid" id="inputFloatingLabel2" rows="5"></textarea>
+                            <label for="inputFloatingLabel2" class="placeholder">Alamat</label>
 													</div>
 											</div>
 											<div class="col-sm-12">
 													<div class="form-group form-floating-label">
-														<!-- <select name="kategori" class="form-control input-solid" id="selectFloatingLabel2" required>
-															<option value="">&nbsp;</option>
-															<option value="Fast Moving">Fast Moving</option>
-															<option value="Slow Moving">Slow Moving</option>
-															<option value="Dead Stock">Dead Stock</option>
-														</select> -->
-														<select name="kategori" class="form-control input-solid" id="selectFloatingLabel2" required>
-															<option value="">&nbsp;</option>
-															<?php 
-																$this->db->select('*');
-																$this->db->from('kategori');                            
-																$query = $this->db->get();            
-																foreach ($query->result() as $row)
-																{
-															?>
-																<option value="<?php echo $row->id_kategori;?>"><?php echo $row->nama_kategori;?></option>
-															<?php	} ?>
-														</select>
-														<label for="selectFloatingLabel2" class="placeholder">Kategori</label>
+														<input name="kota" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
+														<label for="inputFloatingLabel2" class="placeholder">kota</label>
 													</div>
 											</div>
 											<div class="col-sm-12">
 													<div class="form-group form-floating-label">
-														<input name="expired" autocomplete="off" id="inputFloatingLabel2" type="date" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
-														<label for="inputFloatingLabel2" class="placeholder" style="position:absolut; font-size: 85%!important;transform: translate3d(0,-10px,0);top: 0;opacity: 1;padding: .375rem 0 .75rem;font-weight: 600;">Expired</label>
-													</div>
-											</div>
-											<div class="col-sm-12">
-													<div class="form-group form-floating-label">
-														<input name="harga_beli" autocomplete="off" id="inputFloatingLabel2" type="number" class="form-control input-solid" required>
-														<label for="inputFloatingLabel2" class="placeholder">Harga Beli</label>
-													</div>
-											</div>
-											<div class="col-sm-12">
-													<div class="form-group form-floating-label">
-														<input name="harga_jual" autocomplete="off" id="inputFloatingLabel2" type="number" class="form-control input-solid" required>
-														<label for="inputFloatingLabel2" class="placeholder">Harga Jual</label>
-													</div>
-											</div>
-											<div class="col-sm-12">
-													<div class="form-group form-floating-label">
-														<select name="id_supplier" class="form-control input-solid" id="selectFloatingLabel2" required>
-															<option value="">&nbsp;</option>
-															<?php 
-																$query = $this->db->get('supplier');
-																foreach ($query->result() as $row)
-																{
-															?>
-																<option value="<?php echo $row->id_supplier;?>"><?php echo $row->nama_supplier;?></option>
-															<?php	} ?>
-														</select>
-														<label for="selectFloatingLabel2" class="placeholder">Supplier</label>
+														<input name="no_tlp" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20" onkeyup="this.value = this.value.toUpperCase()" required>
+														<label for="inputFloatingLabel2" class="placeholder">No Tlp</label>
 													</div>
 											</div>
 										</div>
@@ -155,14 +105,11 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>ID Obat</th>
-								<th>Nama Obat</th>
-								<th>Jenis Obat</th>
-								<th>Satuan</th>
-								<th>Harga Beli</th>
-								<th>Harga Jual</th>
-								<th>Stok</th>
-								<th>Supplier</th>
+								<th>Nama Dokter</th>
+								<th>Spesialis</th>
+								<th>Alamat</th>
+								<th>Kota</th>
+								<th>No Tlp</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
@@ -171,24 +118,21 @@
 							<?php foreach($data as $u){ ?>
 							<tr>
 								<td><?php echo $no++; ?></td>
-								<td><?php echo $u->id_obat ?></td>
-								<td><?php echo $u->nama_obat ?></td>
-								<td><?php echo $u->jenis_obat ?></td>
-								<td><?php echo $u->satuan ?></td>
-								<td><?php echo number_format($u->harga_beli) ?></td>
-								<td><?php echo number_format($u->harga_jual) ?></td>
-								<td><?php echo $u->stok ?></td>
-								<td><?php echo $u->nama_supplier ?></td>
+								<td><?php echo $u->nama_dokter ?></td>
+								<td><?php echo $u->spesialis ?></td>
+								<td><?php echo $u->alamat ?></td>
+								<td><?php echo $u->kota ?></td>
+								<td><?php echo $u->no_tlp ?></td>
 								<td>
 								<div class="form-button-action">
 									<label class="selectgroup-item">
-									<a href="javascript:void(0)" onclick="$('#view-modal').modal('show');" data-id="<?php echo $u->id_obat; ?>" id="get_data" data-toggle="tooltip" title="Approval">
+									<a href="javascript:void(0)" onclick="$('#view-modal').modal('show');" data-id="<?php echo $u->id_dokter; ?>" id="get_data" data-toggle="tooltip" title="Approval">
 										<span class="selectgroup-button selectgroup-button-icon"><i class="fas fa-edit btn btn-warning btn-xs"></i></span>
 									</a>
 									
 									</label>
 									<label class="selectgroup-item">
-										<a href="<?php echo base_url('obat/delete/'.$u->id_obat)?>">
+										<a href="<?php echo base_url('dokter/delete/'.$u->id_dokter)?>">
 											<span class="selectgroup-button selectgroup-button-icon "><i class="fas fa-trash-alt btn btn-danger btn-xs"></i></span>
 										</a>
 									</label>
@@ -209,7 +153,7 @@
 		<div class="modal-content"> 
 			<div class="modal-header no-bd">
 				<h5 class="modal-title">
-					<span class="fw-mediumbold">Obat</span> 
+					<span class="fw-mediumbold">dokter</span> 
 				</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -239,7 +183,7 @@
 					$('#modal-loader').show();      // load ajax loader
 					
 					$.ajax({
-							url  : "<?php echo site_url(); ?>obat/get_conten/"+uid,
+							url  : "<?php echo site_url(); ?>dokter/get_conten/"+uid,
 							type: 'POST',
 							dataType: 'html'
 					})

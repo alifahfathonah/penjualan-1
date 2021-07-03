@@ -40,7 +40,7 @@
 						<div class="card">
 							<div class="card-body">
 								<label for="selectFloatingLabel2" class="placeholder">Customer</label>
-								<select name="id_customer" class="form-control input-solid" id="selectFloatingLabel2" required>
+								<select name="id_customer" class="form-control input-solid" id="selectFloatingLabel2">
 									<option value="">&nbsp;</option>
 									<?php 
 										$query = $this->db->get('customer');
@@ -103,8 +103,20 @@
 						<div class="col-xl-3">
 							<div class="card">
 								<div class="card-body">
-									<label for="inputFloatingLabel2" class="placeholder">Dokter</label>
-									<input value="<?php echo $header[0]->dokter;?>" name="dokter" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20">
+									<label for="selectFloatingLabel2" class="placeholder">Dokter</label>
+									<select name="dokter" class="form-control input-solid" id="selectFloatingLabel2" required>
+										<option value="">&nbsp;</option>
+										<?php 
+											$this->db->select('*');
+											$this->db->from('dokter');                            
+											$query = $this->db->get();            
+											foreach ($query->result() as $row)
+											{
+										?>
+											<option value="<?php echo $row->id_dokter;?>" <?php if($row->id_dokter == $header[0]->dokter){ echo 'selected';} ?>><?php echo $row->nama_dokter;?></option>
+										<?php	} ?>
+									</select>
+									<!-- <input value="<?php echo $header[0]->dokter;?>" name="" autocomplete="off" id="inputFloatingLabel2" type="text" class="form-control input-solid" size="20"> -->
 								</div>
 							</div>
 						</div>

@@ -18,7 +18,7 @@
                 <option value="<?php echo $row->id_obat;?>" <?php if($row->id_obat == $data[0]->id_obat){ echo 'selected'; }?>><?php echo $row->nama_obat;?></option>
               <?php	} ?>
             </select>
-            <label for="selectFloatingLabel2" class="placeholder">Supplier</label>
+            <label for="selectFloatingLabel2" class="placeholder">Obat</label>
           </div>
       </div>
       <div class="col-sm-12">

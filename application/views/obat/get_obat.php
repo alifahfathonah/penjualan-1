@@ -28,11 +28,23 @@
       </div>
       <div class="col-sm-12">
           <div class="form-group form-floating-label">
-            <select name="kategori" class="form-control input-solid" id="selectFloatingLabel2" required>
+            <!-- <select name="kategori" class="form-control input-solid" id="selectFloatingLabel2" required>
               <option value="">&nbsp;</option>
               <option value="Fast Moving" <?php if($data[0]->kategori == 'Fast Moving'){ echo 'selected'; }?>>Fast Moving</option>
               <option value="Slow Moving" <?php if($data[0]->kategori == 'Slow Moving'){ echo 'selected'; }?>>Slow Moving</option>
               <option value="Dead Stock" <?php if($data[0]->kategori == 'Dead Stock'){ echo 'selected'; }?>>Dead Stock</option>
+            </select> -->
+            <select name="kategori" class="form-control input-solid" id="selectFloatingLabel2" required>
+              <option value="">&nbsp;</option>
+              <?php 
+                $this->db->select('*');
+                $this->db->from('kategori');                            
+                $query = $this->db->get();            
+                foreach ($query->result() as $row)
+                {
+              ?>
+                <option value="<?php echo $row->id_kategori;?>"<?php if($data[0]->kategori == $row->id_kategori){ echo 'selected'; }?>><?php echo $row->nama_kategori;?></option>
+              <?php	} ?>
             </select>
             <label for="selectFloatingLabel2" class="placeholder">Kategori</label>
           </div>

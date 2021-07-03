@@ -69,7 +69,7 @@
 														<option value="<?php echo $row->id_supplier;?>"><?php echo $row->nama_supplier;?></option>
 													<?php	} ?>
 												</select>
-												<label for="selectFloatingLabel2" class="placeholder">Supplier</label>
+												<label for="selectFloatingLabel2" class="placeholder">Obat</label>
 											</div>
 									</div>
 									<div class="col-sm-12">
@@ -121,7 +121,7 @@
               <td><button class="btn btn-<?php if($u->status == 'Done'){ echo 'success';}else{ echo 'warning';}?>" disabled="disabled"><?php echo $u->status ?></button></td>
 							<td>
 							<div class="form-button-action">
-								<?php if($u->status == 'Proses'){ ?>
+								<?php #if($u->status == 'Proses'){ ?>
 									<label class="selectgroup-item">
 										<a href="<?php echo base_url('pembelian/item/'.$u->id_pembelian)?>">
 											<span class="selectgroup-button selectgroup-button-icon "><i class="fas fa-edit btn btn-warning btn-xs"></i></span>
@@ -132,13 +132,13 @@
 											<span class="selectgroup-button selectgroup-button-icon "><i class="fas fa-trash-alt btn btn-danger btn-xs"></i></span>
 										</a>
 									</label>
-								<?php }else{ ?>
+								<?php #}else{ ?>
 									<label class="selectgroup-item">
 										<a href="<?php echo base_url('pembelian/print/'.$u->id_pembelian)?>" target="_blank">
 											<span class="selectgroup-button selectgroup-button-icon "><i class="fas fa-print btn btn-info btn-xs"></i></span>
 										</a>
 									</label>
-								<?php } ?>
+								<?php #} ?>
 							</div>
               </td>
             </tr>
