@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2021-06-18 06:45:32
+Date: 2021-07-04 17:25:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,6 +35,46 @@ INSERT INTO `customer` VALUES ('2106120001', '5X', 'cx', '5x', '5x');
 INSERT INTO `customer` VALUES ('2106130001', 'CUSTOMER', 'JL.', 'Kalbar', '021');
 
 -- ----------------------------
+-- Table structure for `dokter`
+-- ----------------------------
+DROP TABLE IF EXISTS `dokter`;
+CREATE TABLE `dokter` (
+  `id_dokter` int(15) NOT NULL AUTO_INCREMENT,
+  `nama_dokter` varchar(64) DEFAULT NULL,
+  `spesialis` varchar(64) DEFAULT NULL,
+  `alamat` varchar(64) DEFAULT NULL,
+  `kota` varchar(64) DEFAULT NULL,
+  `no_tlp` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id_dokter`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of dokter
+-- ----------------------------
+INSERT INTO `dokter` VALUES ('1', 'Aqilah', 'gigi', 'd`queen', 'tangerang', '0821');
+INSERT INTO `dokter` VALUES ('2', 'Tiwi', 'kecantikan', 'poris', 'tangerang', '0838');
+INSERT INTO `dokter` VALUES ('4', 'CRUD', 'CRUD', 'CRUD', 'CRUD', 'CRUD');
+
+-- ----------------------------
+-- Table structure for `kategori`
+-- ----------------------------
+DROP TABLE IF EXISTS `kategori`;
+CREATE TABLE `kategori` (
+  `id_kategori` int(15) NOT NULL AUTO_INCREMENT,
+  `nama_kategori` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id_kategori`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of kategori
+-- ----------------------------
+INSERT INTO `kategori` VALUES ('1', 'Fast Moving');
+INSERT INTO `kategori` VALUES ('2', 'Slow Moving');
+INSERT INTO `kategori` VALUES ('3', 'Dead Stock');
+INSERT INTO `kategori` VALUES ('5', 'CRUT');
+INSERT INTO `kategori` VALUES ('6', 'CRUD');
+
+-- ----------------------------
 -- Table structure for `obat`
 -- ----------------------------
 DROP TABLE IF EXISTS `obat`;
@@ -50,15 +90,16 @@ CREATE TABLE `obat` (
   `stok` int(5) DEFAULT NULL,
   `id_supplier` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_obat`)
-) ENGINE=InnoDB AUTO_INCREMENT=2106150002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2107030002 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of obat
 -- ----------------------------
-INSERT INTO `obat` VALUES ('2106130001', 'OK', 'OK', 'Box', 'Fast Moving', '2021-06-13', '20000', '30000', '0', '2106130002');
-INSERT INTO `obat` VALUES ('2106130002', 'X', 'XX', 'Pcs', 'Fast Moving', '2021-06-13', '1', '2', '2', '2106130002');
-INSERT INTO `obat` VALUES ('2106130003', 'BENER', 'BENER', 'Carton', 'Dead Stock', '2021-06-30', '10', '20', null, '2106130002');
-INSERT INTO `obat` VALUES ('2106150001', 'DASD', 'DA', 'Pcs', 'Fast Moving', '2021-06-15', '1000', '2000', '10', '2106130003');
+INSERT INTO `obat` VALUES ('2106130001', 'OK', 'OK', 'Box', '1', '2021-06-13', '20000', '30000', '1', '2106130002');
+INSERT INTO `obat` VALUES ('2106130002', 'X', 'XX', 'Pcs', '1', '2021-06-13', '1', '2', '3', '2106130002');
+INSERT INTO `obat` VALUES ('2106130003', 'BENER', 'BENER', 'Carton', '3', '2021-06-30', '10', '20', null, '2106130002');
+INSERT INTO `obat` VALUES ('2106150001', 'DASD', 'DA', 'Pcs', '2', '2021-06-15', '1000', '2000', '10', '2106130003');
+INSERT INTO `obat` VALUES ('2107030001', '123', '123', 'Box', '4', '2021-07-03', '123', '123', null, '2106130002');
 
 -- ----------------------------
 -- Table structure for `pegawai`
@@ -79,8 +120,8 @@ CREATE TABLE `pegawai` (
 -- ----------------------------
 -- Records of pegawai
 -- ----------------------------
-INSERT INTO `pegawai` VALUES ('2106130001', 'DAS', 'dasd', 'sad', null, 'DA@SDA', 'das', '2a6571da26602a67be14ea8c5ab82349');
-INSERT INTO `pegawai` VALUES ('2106130003', 'DSD 1', 'asdasd 1', 'sdasd 1', 'asda 1ee', 'ASD@DASDA1.COM', 'sdasd 1', 'c4ca4238a0b923820dcc509a6f75849b');
+INSERT INTO `pegawai` VALUES ('2106130001', 'ADMIN', 'dasd', 'sad', null, 'DA@SDA', 'admin', '827ccb0eea8a706c4c34a16891f84e7b');
+INSERT INTO `pegawai` VALUES ('2106130003', 'SANDI', 'asdasd 1', 'sdasd 1', 'asda 1ee', 'ASD@DASDA1.COM', 'sandi', '827ccb0eea8a706c4c34a16891f84e7b');
 
 -- ----------------------------
 -- Table structure for `pembelian`
@@ -94,14 +135,38 @@ CREATE TABLE `pembelian` (
   `id_supplier` int(11) DEFAULT NULL,
   `status` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id_pembelian`)
-) ENGINE=InnoDB AUTO_INCREMENT=2106160002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2106190004 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of pembelian
 -- ----------------------------
-INSERT INTO `pembelian` VALUES ('2106150001', '2021-06-15', null, '20002', '2106130002', 'Done');
-INSERT INTO `pembelian` VALUES ('2106150002', '2021-06-16', '06:39:00', '10000', '2106130003', 'Done');
-INSERT INTO `pembelian` VALUES ('2106160001', '2021-06-16', null, null, '2106130002', 'Proses');
+INSERT INTO `pembelian` VALUES ('2106150001', '2021-06-15', '22:36:00', '20002', '2106130002', 'Done');
+INSERT INTO `pembelian` VALUES ('2106150002', '2021-06-20', '06:39:00', '10000', '2106130003', 'Done');
+INSERT INTO `pembelian` VALUES ('2106160001', '2021-06-16', null, '20000', '2106130002', 'Proses');
+INSERT INTO `pembelian` VALUES ('2106190001', null, null, null, null, 'Proses');
+INSERT INTO `pembelian` VALUES ('2106190002', null, null, null, null, 'Proses');
+INSERT INTO `pembelian` VALUES ('2106190003', null, null, null, null, 'Proses');
+
+-- ----------------------------
+-- Table structure for `pengajian`
+-- ----------------------------
+DROP TABLE IF EXISTS `pengajian`;
+CREATE TABLE `pengajian` (
+  `id_gaji` int(1) NOT NULL AUTO_INCREMENT,
+  `id_pegawai` int(15) DEFAULT NULL,
+  `bulan` varchar(25) DEFAULT NULL,
+  `tahun` varchar(25) DEFAULT NULL,
+  `gaji_pokok` double DEFAULT NULL,
+  `gaji_lembur` double DEFAULT NULL,
+  `lembur_perjam` double DEFAULT NULL,
+  PRIMARY KEY (`id_gaji`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of pengajian
+-- ----------------------------
+INSERT INTO `pengajian` VALUES ('4', '2106130003', 'JULY', '2022', '2500000', '30000', '6');
+INSERT INTO `pengajian` VALUES ('7', '2106130001', 'JULY', '2021', '2500000', '25000', '4');
 
 -- ----------------------------
 -- Table structure for `penjualan`
@@ -115,17 +180,16 @@ CREATE TABLE `penjualan` (
   `id_customer` int(11) DEFAULT NULL,
   `status` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id_penjualan`)
-) ENGINE=InnoDB AUTO_INCREMENT=2106160007 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2107030003 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of penjualan
 -- ----------------------------
-INSERT INTO `penjualan` VALUES ('2106160001', '2021-06-16', '08:51:00', null, '2106120001', 'Done');
-INSERT INTO `penjualan` VALUES ('2106160002', '2021-06-16', '09:03:00', '2', '2106120001', 'Proses');
-INSERT INTO `penjualan` VALUES ('2106160003', '2021-06-16', '09:08:00', '0', '2106120001', 'Done');
-INSERT INTO `penjualan` VALUES ('2106160004', null, null, null, null, 'Proses');
-INSERT INTO `penjualan` VALUES ('2106160005', null, null, null, null, 'Proses');
-INSERT INTO `penjualan` VALUES ('2106160006', null, null, null, null, 'Proses');
+INSERT INTO `penjualan` VALUES ('2106160001', '2021-06-20', '08:51:00', '30000', '2106120001', 'Done');
+INSERT INTO `penjualan` VALUES ('2106160002', '2021-06-16', '09:03:00', '2', '2106120001', 'Done');
+INSERT INTO `penjualan` VALUES ('2106160003', '2021-06-16', '09:08:00', '2', '2106120001', 'Done');
+INSERT INTO `penjualan` VALUES ('2107030001', '2021-07-03', null, null, null, 'Proses');
+INSERT INTO `penjualan` VALUES ('2107030002', '2021-07-03', '21:36:35', '0', '0', 'Proses');
 
 -- ----------------------------
 -- Table structure for `resep`
@@ -139,12 +203,13 @@ CREATE TABLE `resep` (
   `keterangan` varchar(128) DEFAULT NULL,
   `id_penjualan` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_resep`)
-) ENGINE=InnoDB AUTO_INCREMENT=2106160002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2107030002 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of resep
 -- ----------------------------
-INSERT INTO `resep` VALUES ('2106160001', '123', '2021-06-16', '123', '123', '2106160002');
+INSERT INTO `resep` VALUES ('2106160001', '123', '2021-06-16', '2', '123', '2106160002');
+INSERT INTO `resep` VALUES ('2107030001', '1312412', null, '1', '', '2107030002');
 
 -- ----------------------------
 -- Table structure for `supplier`
@@ -177,7 +242,7 @@ CREATE TABLE `transaksi_pembelian` (
   `total` double DEFAULT NULL,
   `id_pembelian` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_detail_masuk`)
-) ENGINE=InnoDB AUTO_INCREMENT=2106150004 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2106200002 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of transaksi_pembelian
@@ -185,6 +250,7 @@ CREATE TABLE `transaksi_pembelian` (
 INSERT INTO `transaksi_pembelian` VALUES ('2106150001', '2106130001', '20000', '1', '20000', '2106150001');
 INSERT INTO `transaksi_pembelian` VALUES ('2106150002', '2106130002', '1', '2', '2', '2106150001');
 INSERT INTO `transaksi_pembelian` VALUES ('2106150003', '2106150001', '1000', '10', '10000', '2106150002');
+INSERT INTO `transaksi_pembelian` VALUES ('2106200001', '2106130001', '20000', '1', '20000', '2106160001');
 
 -- ----------------------------
 -- Table structure for `transaksi_penjualan`
@@ -198,7 +264,7 @@ CREATE TABLE `transaksi_penjualan` (
   `total` double DEFAULT NULL,
   `id_penjualan` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_detail_penjualan`)
-) ENGINE=InnoDB AUTO_INCREMENT=2106160004 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2106200002 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of transaksi_penjualan
@@ -206,3 +272,4 @@ CREATE TABLE `transaksi_penjualan` (
 INSERT INTO `transaksi_penjualan` VALUES ('2106160001', '2106130001', '30000', '1', '30000', '2106160001');
 INSERT INTO `transaksi_penjualan` VALUES ('2106160002', '2106130002', '2', '1', '2', '2106160002');
 INSERT INTO `transaksi_penjualan` VALUES ('2106160003', '2106130002', '2', '1', '2', '2106160003');
+INSERT INTO `transaksi_penjualan` VALUES ('2106200001', '2106150001', '2000', '1', '2000', '2106160004');

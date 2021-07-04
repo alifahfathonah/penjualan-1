@@ -40,6 +40,7 @@
               $this->uri->segment('1') == 'pegawai' OR 
               $this->uri->segment('1') == 'supplier' OR 
               $this->uri->segment('1') == 'kategori' OR 
+              $this->uri->segment('1') == 'gaji' OR 
               $this->uri->segment('1') == 'dokter' OR 
               $this->uri->segment('1') == 'obat' )
             {
@@ -57,6 +58,7 @@
                 $this->uri->segment('1') == 'pegawai' OR 
                 $this->uri->segment('1') == 'supplier' OR 
                 $this->uri->segment('1') == 'kategori' OR 
+                $this->uri->segment('1') == 'gaji' OR 
                 $this->uri->segment('1') == 'dokter' OR 
                 $this->uri->segment('1') == 'obat' )
               {
@@ -92,6 +94,11 @@
               <li class="<?php if($this->uri->segment('1') == 'customer'){ echo 'active'; } ?>">
                 <a href="<?=site_url('customer')?>">
                   <span class="sub-item">Customer</span>
+                </a>
+              </li>
+              <li class="<?php if($this->uri->segment('1') == 'gaji'){ echo 'active'; } ?>">
+                <a href="<?=site_url('gaji')?>">
+                  <span class="sub-item">Pengajian</span>
                 </a>
               </li>
             </ul>
