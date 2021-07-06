@@ -81,6 +81,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
+								<th>ID Kategori</th>
 								<th>Nama Kategori</th>
 								<th>Aksi</th>
 							</tr>
@@ -90,6 +91,7 @@
 							<?php foreach($data as $u){ ?>
 							<tr>
 								<td><?php echo $no++; ?></td>
+								<td><?php echo $u->id_kategori ?></td>
 								<td><?php echo $u->nama_kategori ?></td>
 								<td>
 								<div class="form-button-action">

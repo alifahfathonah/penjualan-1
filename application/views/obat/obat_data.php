@@ -159,6 +159,7 @@
 								<th>Nama Obat</th>
 								<th>Jenis Obat</th>
 								<th>Satuan</th>
+								<th>Kategori</th>
 								<th>Harga Beli</th>
 								<th>Harga Jual</th>
 								<th>Stok</th>
@@ -175,6 +176,7 @@
 								<td><?php echo $u->nama_obat ?></td>
 								<td><?php echo $u->jenis_obat ?></td>
 								<td><?php echo $u->satuan ?></td>
+								<td><?php echo $u->nama_kategori ?></td>
 								<td><?php echo number_format($u->harga_beli) ?></td>
 								<td><?php echo number_format($u->harga_jual) ?></td>
 								<td><?php echo $u->stok ?></td>

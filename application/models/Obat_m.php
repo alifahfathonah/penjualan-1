@@ -4,9 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Obat_m extends CI_Model
 {
 	public function list(){
-		$this->db->select('obat.*, nama_supplier')
+		$this->db->select('obat.*, nama_supplier,nama_kategori')
               ->from('obat')
-              ->join('supplier', 'supplier.id_supplier = obat.id_supplier');
+              ->join('supplier', 'supplier.id_supplier = obat.id_supplier')
+              ->join('kategori', 'kategori.id_kategori = obat.kategori');
 		return $this->db->get();
 	}
 	public function insert(){
