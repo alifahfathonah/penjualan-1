@@ -20,7 +20,8 @@ class Auth extends CI_Controller
 				$vel['data']=$hsl;
 			}
 		}
-		$this->load->view('login',$vel);
+		// $this->load->view('login',$vel);
+		$this->load->view('loginalt',$vel);
 	}
 
 	public function logout()

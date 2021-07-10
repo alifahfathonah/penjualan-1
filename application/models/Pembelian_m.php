@@ -195,7 +195,7 @@ class pembelian_m extends CI_Model
 							->where('tanggal_pembelian',date('Y-m-d'));
 		return $this->db->get()->result();
 	}
-	public function list_lap(){
+	public function list_lap($dari,$sampai){
 		// NOTE : menampilkan data laporan
 		$this->db->select(" pembelian.id_pembelian,tanggal_pembelian,grand_total,nama_supplier,
 												GROUP_CONCAT(CONCAT_WS(' = ', nama_obat, qty) SEPARATOR '; ') as item ")
@@ -204,7 +204,10 @@ class pembelian_m extends CI_Model
               ->join('transaksi_pembelian', 'transaksi_pembelian.id_pembelian=pembelian.id_pembelian')
               ->join('obat', 'obat.id_obat=transaksi_pembelian.id_obat')
 							->where('status', 'Done')
-							->group_by('transaksi_pembelian.id_pembelian');
+							->where('tanggal_pembelian >=', $dari)
+							->where('tanggal_pembelian <=', $sampai)
+							->group_by('transaksi_pembelian.id_pembelian')
+							->order_by('pembelian.id_pembelian','ASC');
 		return $this->db->get();
 	}
 }

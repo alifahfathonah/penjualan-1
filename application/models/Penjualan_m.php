@@ -262,9 +262,8 @@ class Penjualan_m extends CI_Model
 							->where('tanggal_penjualan',date('Y-m-d'));
 		return $this->db->get()->result();
 	}
-	public function list_lap(){
+	public function list_lap($dari,$sampai){
 		// NOTE : menampilkan data laporan
-		
 		$this->db->select(" transaksi_penjualan.id_penjualan, tanggal_penjualan, nama_customer, 
 												grand_total, GROUP_CONCAT(CONCAT_WS('=', nama_obat, qty)SEPARATOR '; ') as item ")
               ->from('penjualan')
@@ -272,7 +271,10 @@ class Penjualan_m extends CI_Model
               ->join('transaksi_penjualan', 'transaksi_penjualan.id_penjualan=penjualan.id_penjualan')
               ->join('obat', 'obat.id_obat=transaksi_penjualan.id_obat')
 							->where('status', 'Done')
-							->group_by('transaksi_penjualan.id_penjualan');
+							->where('tanggal_penjualan >=', $dari)
+							->where('tanggal_penjualan <=', $sampai)
+							->group_by('transaksi_penjualan.id_penjualan')
+							->order_by('transaksi_penjualan.id_penjualan','ASC');
 		return $this->db->get();
 	}
 }

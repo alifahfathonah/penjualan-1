@@ -9,6 +9,14 @@ class Gaji_m extends CI_Model
               ->join('pegawai', 'pegawai.id_pegawai=pengajian.id_pegawai');
 		return $this->db->get();
 	}
+	public function list_gaji($bulan,$tahun){
+		$this->db->select('*')
+              ->from('pengajian')
+              ->join('pegawai', 'pegawai.id_pegawai=pengajian.id_pegawai')
+							->where('bulan',$bulan)
+							->where('tahun',$tahun);
+		return $this->db->get();
+	}
 	public function insert(){
 		$this->db->set('id_pegawai', $this->input->post('id_pegawai'));
 		$this->db->set('bulan', strtoupper($this->input->post('bulan')));
