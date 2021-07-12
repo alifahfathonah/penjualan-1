@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="sidebar sidebar-style-2">			
+<div class="sidebar sidebar-style-2" style="background:#1c45ef;">			
   <div class="sidebar-wrapper scrollbar scrollbar-inner">
     <div class="sidebar-content">
       <div class="user">
@@ -25,7 +25,7 @@
           ?>">
           <a  href="<?=site_url('dashboard')?>" class="collapsed" aria-expanded="false">
             <i class="fas fa-home"></i>
-            <p>Dashboard</p>
+            <p style="color:white;">Dashboard</p>
           </a>
         </li>
         <li class="nav-section">
@@ -49,7 +49,7 @@
           ?>">
           <a data-toggle="collapse" href="#base">
             <i class="fas fa-layer-group"></i>
-            <p>Data Master</p>
+            <p style="color:white;">Data Master</p>
             <span class="caret"></span>
           </a>
           <div class="collapse 
@@ -68,37 +68,37 @@
             <ul class="nav nav-collapse">
               <li class="<?php if($this->uri->segment('1') == 'pegawai'){ echo 'active'; } ?>">
                 <a href="<?=site_url('pegawai')?>">
-                  <span class="sub-item show">Pegawai</span>
+                  <span class="sub-item show" style="color:white;">Pegawai</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'supplier'){ echo 'active'; } ?>">
                 <a href="<?=site_url('supplier')?>">
-                  <span class="sub-item">Supplier</span>
+                  <span class="sub-item" style="color:white;">Supplier</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'obat'){ echo 'active'; } ?>">
                 <a href="<?=site_url('obat')?>">
-                  <span class="sub-item">Obat</span>
+                  <span class="sub-item" style="color:white;">Obat</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'kategori'){ echo 'active'; } ?>">
                 <a href="<?=site_url('kategori')?>">
-                  <span class="sub-item">Kategori</span>
+                  <span class="sub-item" style="color:white;">Kategori</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'dokter'){ echo 'active'; } ?>">
                 <a href="<?=site_url('dokter')?>">
-                  <span class="sub-item">Dokter</span>
+                  <span class="sub-item" style="color:white;">Dokter</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'customer'){ echo 'active'; } ?>">
                 <a href="<?=site_url('customer')?>">
-                  <span class="sub-item">Customer</span>
+                  <span class="sub-item" style="color:white;">Customer</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'gaji'){ echo 'active'; } ?>">
                 <a href="<?=site_url('gaji')?>">
-                  <span class="sub-item">Pengajian</span>
+                  <span class="sub-item" style="color:white;">Pengajian</span>
                 </a>
               </li>
             </ul>
@@ -107,7 +107,7 @@
         <li class="nav-item">
           <a data-toggle="collapse" href="#sidebarLayouts">
             <i class="fas fa-th-list"></i>
-            <p>Transaksi</p>
+            <p style="color:white;">Transaksi</p>
             <span class="caret"></span>
           </a>
           <div class="collapse 
@@ -121,12 +121,12 @@
             <ul class="nav nav-collapse">
               <li class="<?php if($this->uri->segment('1') == 'pembelian'){ echo 'active'; } ?>">
                 <a href="<?=site_url('pembelian')?>">
-                  <span class="sub-item">Pembelian</span>
+                  <span class="sub-item" style="color:white;">Pembelian</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'penjualan'){ echo 'active'; } ?>">
                 <a href="<?=site_url('penjualan')?>">
-                  <span class="sub-item">Penjualan</span>
+                  <span class="sub-item" style="color:white;">Penjualan</span>
                 </a>
               </li>
             </ul>
@@ -141,7 +141,7 @@
           ?>">
           <a  href="<?=site_url('laporan')?>" class="collapsed" aria-expanded="false">
             <i class="fas fa-chart-bar"></i>
-            <p>Laporan</p>
+            <p style="color:white;">Laporan</p>
           </a>
         </li>
       </ul>

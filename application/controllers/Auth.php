@@ -21,7 +21,8 @@ class Auth extends CI_Controller
 			}
 		}
 		// $this->load->view('login',$vel);
-		$this->load->view('loginalt',$vel);
+		// $this->load->view('loginalt',$vel);
+		$this->load->view('logins',$vel);
 	}
 
 	public function logout()

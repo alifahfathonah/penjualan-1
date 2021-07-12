@@ -32,10 +32,10 @@ if($this->session->userdata("id_pegawai")){
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
-			<div class="logo-header" data-background-color="blue">
+			<div class="logo-header"  style="background:#1c45ef;">
 				
-				<a href="#" class="logo">PENJUALAN OBAT</a>
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<a href="#" class="logo" style="color:white;">PENJUALAN OBAT</a>
+				<!-- <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
 						<i class="icon-menu"></i>
 					</span>
@@ -45,7 +45,7 @@ if($this->session->userdata("id_pegawai")){
 					<button class="btn btn-toggle toggle-sidebar">
 						<i class="icon-menu"></i>
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<!-- End Logo Header -->
 
