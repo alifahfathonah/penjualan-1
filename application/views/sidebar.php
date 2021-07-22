@@ -69,37 +69,37 @@
             <ul class="nav nav-collapse">
               <li class="<?php if($this->uri->segment('1') == 'pegawai'){ echo 'active'; } ?>">
                 <a href="<?=site_url('pegawai')?>">
-                  <span class="sub-item show" style="color:white;">Pegawai</span>
+                  <span class="fas fa-user-cog" style="color:white;"> Pegawai</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'supplier'){ echo 'active'; } ?>">
                 <a href="<?=site_url('supplier')?>">
-                  <span class="sub-item" style="color:white;">Supplier</span>
+                  <span class="fas fa-truck" style="color:white;"> Supplier</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'obat'){ echo 'active'; } ?>">
                 <a href="<?=site_url('obat')?>">
-                  <span class="sub-item" style="color:white;">Obat</span>
+                  <span class="fas fa-capsules" style="color:white;"> Obat</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'kategori'){ echo 'active'; } ?>">
                 <a href="<?=site_url('kategori')?>">
-                  <span class="sub-item" style="color:white;">Kategori</span>
+                  <span class="icon-menu" style="color:white;"> Kategori</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'dokter'){ echo 'active'; } ?>">
                 <a href="<?=site_url('dokter')?>">
-                  <span class="sub-item" style="color:white;">Dokter</span>
+                  <span class="icon-eyeglass" style="color:white;"> Dokter</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'customer'){ echo 'active'; } ?>">
                 <a href="<?=site_url('customer')?>">
-                  <span class="sub-item" style="color:white;">Customer</span>
+                  <span class="fas fa-users" style="color:white;"> Customer</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'gaji'){ echo 'active'; } ?>">
                 <a href="<?=site_url('gaji')?>">
-                  <span class="sub-item" style="color:white;">Pengajian</span>
+                  <span class="icon-wallet" style="color:white;"> Pengajian</span>
                 </a>
               </li>
             </ul>
@@ -122,12 +122,12 @@
             <ul class="nav nav-collapse">
               <li class="<?php if($this->uri->segment('1') == 'pembelian'){ echo 'active'; } ?>">
                 <a href="<?=site_url('pembelian')?>">
-                  <span class="sub-item" style="color:white;">Pembelian</span>
+                  <span class="icon-bag" style="color:white;"> Pembelian</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'penjualan'){ echo 'active'; } ?>">
                 <a href="<?=site_url('penjualan')?>">
-                  <span class="sub-item" style="color:white;">Penjualan</span>
+                  <span class="icon-basket" style="color:white;"> Penjualan</span>
                 </a>
               </li>
             </ul>
