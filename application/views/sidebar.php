@@ -1,8 +1,9 @@
 <!-- Sidebar -->
-<div class="sidebar sidebar-style-2" style="background:#1c45ef;">			
+<div class="sidebar sidebar-style-2" style="background: #1572e8!important;
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.1),4px 4px 15px -5px rgba(21,114,232,.4)!important;">			
   <div class="sidebar-wrapper scrollbar scrollbar-inner">
     <div class="sidebar-content">
-      <div class="user">
+      <div class="user" style="border-bottom:none;">
         <div class="avatar-sm float-left mr-2">
           <img src="<?=base_url()?>assets/img/icon.jpeg" alt="" class="avatar-img rounded-circle">
         </div>
@@ -48,7 +49,7 @@
             }
           ?>">
           <a data-toggle="collapse" href="#base">
-            <i class="fas fa-layer-group"></i>
+            <i class="fas icon-speedometer"></i>
             <p style="color:white;">Data Master</p>
             <span class="caret"></span>
           </a>

@@ -17,7 +17,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="<?=site_url()?>login/baru/assets/css/shared/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="<?=site_url()?>login/baru/assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="<?=site_url()?>assets/img/icon.jpeg" />
   </head>
   <body>
     <div class="container-scroller">
@@ -31,6 +31,12 @@
                     <div class="btn btn-danger submit-btn btn-block">Login Gagal</div>
                   </div>
                 <?php } ?>
+                <div class="" style="text-align:center; width:100%"><b>
+                Sistem Informasi <br> 
+                Penjualan, Persediaan, Data Expired Obat <br>
+                Pada Apotek Sumber Sehat Berbasis Web</b>
+                </div>
+                <br><br>
                 <form action="<?=site_url('/auth/login')?>" method="POST">
                   <div class="form-group">
                     <label class="label">Username</label>

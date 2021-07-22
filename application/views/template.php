@@ -7,9 +7,8 @@ if($this->session->userdata("id_pegawai")){
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Penjualan Obat</title>
-	<link rel="shortcut icon" href="<?=base_url()?>assets/img/icon.jpeg">
+	<link rel="shortcut icon" href="<?=site_url()?>assets/img/icon.jpeg" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="<?=base_url()?>assets/img/icon.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="<?=base_url()?>assets/js/plugin/webfont/webfont.min.js"></script>
@@ -32,7 +31,8 @@ if($this->session->userdata("id_pegawai")){
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
-			<div class="logo-header"  style="background:#1c45ef;">
+			<div class="logo-header" style="background: #1572e8!important;
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.1),4px 4px 15px -5px rgba(21,114,232,.4)!important;">
 				
 				<a href="#" class="logo" style="color:white;">PENJUALAN OBAT</a>
 				<!-- <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
