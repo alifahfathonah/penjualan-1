@@ -84,17 +84,17 @@
               </li>
               <li class="<?php if($this->uri->segment('1') == 'kategori'){ echo 'active'; } ?>">
                 <a href="<?=site_url('kategori')?>">
-                  <span class="icon-menu" style="color:white;"> Kategori</span>
+                  <span class="icon-layers" style="color:white;"> Kategori</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'dokter'){ echo 'active'; } ?>">
                 <a href="<?=site_url('dokter')?>">
-                  <span class="icon-eyeglass" style="color:white;"> Dokter</span>
+                  <span class="icon-user-follow" style="color:white;"> Dokter</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'customer'){ echo 'active'; } ?>">
                 <a href="<?=site_url('customer')?>">
-                  <span class="fas fa-users" style="color:white;"> Customer</span>
+                  <span class="icon-people" style="color:white;"> Customer</span>
                 </a>
               </li>
               <li class="<?php if($this->uri->segment('1') == 'gaji'){ echo 'active'; } ?>">

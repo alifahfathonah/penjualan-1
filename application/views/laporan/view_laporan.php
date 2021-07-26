@@ -27,7 +27,7 @@
                   <option value="Pegawai">Pegawai</option>
                   <option value="Pembelian">Pembelian</option>
                   <option value="Penjualan">Penjualan</option>
-                  <option value="Gaji">Gaji</option>
+                  <option value="Gaji">Pengajian</option>
                 </select>
               </div>
             </div>
